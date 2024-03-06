@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-#                               __         __
-#                              /__)_   '_/(  _ _
-#                             / ( (//)/(/__)( (//)
-#                                  /
-#
-# Author     : Shankar Narayana Damodaran
-# Tool       : RapidScan v1.2
-# Usage      : python3 rapidsan.py example.com
-# Description: This scanner automates the process of security scanning by using a
-#              multitude of available linux security tools and some custom scripts.
-#
-
-# Importing the libraries
 import sys
 import argparse
 import subprocess
@@ -158,22 +143,6 @@ def helper():
 def clear():
         sys.stdout.write("\033[F")
         sys.stdout.write("\033[K") #clears until EOL
-
-# RapidScan Logo
-def logo():
-    print(bcolors.WARNING)
-    logo_ascii = """
-                                  __         __
-                                 /__)_  """+bcolors.BADFAIL+" ●"+bcolors.WARNING+"""_/(  _ _
-                                / ( (//)/(/__)( (//)
-                                     /
-                     """+bcolors.ENDC+"""(The Multi-Tool Web Vulnerability Scanner)
-
-                     Check out our new software, """+bcolors.BG_LOW_TXT+"""NetBot"""+bcolors.ENDC+""" for simulating DDoS attacks - https://github.com/skavngr/netbot
-    """
-    print(logo_ascii)
-    print(bcolors.ENDC)
-
 
 # Initiliazing the idle loader/spinner class
 class Spinner:
