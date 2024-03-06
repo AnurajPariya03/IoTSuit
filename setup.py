@@ -15,7 +15,7 @@ setup(
     description         =   "IoTSuit.",
     long_description    =   README,
     long_description_content_type = "text/markdown",
-    url                 =   "",
+    url                 =   "https://github.com/AnurajPariya03/IoTSuit.git",
     author              =   "Anuraj Pariya",
     py_modules          =   ['rapidscan',],
     install_requires    =   [],
