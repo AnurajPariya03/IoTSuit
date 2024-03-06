@@ -1408,7 +1408,6 @@ elif args_namespace.target:
     os.system('rm /tmp/rapidscan* > /dev/null 2>&1') # Clearing previous scan files
     os.system('clear')
     os.system('setterm -cursor off')
-    logo()
     print(bcolors.BG_HEAD_TXT+"[ Checking Available Security Scanning Tools Phase... Initiated. ]"+bcolors.ENDC)
 
     unavail_tools_names = list()
