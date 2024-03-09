@@ -1363,7 +1363,6 @@ rs_avail_tools = 0
 rs_skipped_checks = 0
 
 if len(sys.argv) == 1:
-    logo()
     helper()
     sys.exit(1)
 
