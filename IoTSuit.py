@@ -179,7 +179,7 @@ class Spinner:
                     sys.stdout.flush()
 
         except (KeyboardInterrupt, SystemExit):
-            print("\n\t"+ bcolors.BG_ERR_TXT+"RapidScan received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC)
+            print("\n\t"+ bcolors.BG_ERR_TXT+"IoTSuits received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC)
             sys.exit(1)
 
     def start(self):
@@ -194,7 +194,7 @@ class Spinner:
             self.busy = False
             time.sleep(self.delay)
         except (KeyboardInterrupt, SystemExit):
-            print("\n\t"+ bcolors.BG_ERR_TXT+"RapidScan received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC)
+            print("\n\t"+ bcolors.BG_ERR_TXT+"IoTSuits received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC)
             sys.exit(1)
 
 # End ofloader/spinner class
@@ -1428,7 +1428,7 @@ if args_namespace.help or (not args_namespace.update \
     helper()
 elif args_namespace.update:
     logo()
-    print("RapidScan is updating....Please wait.\n")
+    print("IoTSuit is updating....Please wait.\n")
     spinner.start()
     # Checking internet connectivity first...
     rs_internet_availability = check_internet()
@@ -1436,7 +1436,7 @@ elif args_namespace.update:
         print("\t"+ bcolors.BG_ERR_TXT + "There seems to be some problem connecting to the internet. Please try again or later." +bcolors.ENDC)
         spinner.stop()
         sys.exit(1)
-    cmd = 'sha1sum rapidscan.py | grep .... | cut -c 1-40'
+    cmd = 'sha1sum IoTSuit.py | grep .... | cut -c 1-40'
     oldversion_hash = subprocess.check_output(cmd, shell=True)
     oldversion_hash = oldversion_hash.strip()
     os.system('wget -N https://raw.githubusercontent.com/skavngr/rapidscan/master/rapidscan.py -O rapidscan.py > /dev/null 2>&1')
@@ -1444,10 +1444,10 @@ elif args_namespace.update:
     newversion_hash = newversion_hash.strip()
     if oldversion_hash == newversion_hash :
         clear()
-        print("\t"+ bcolors.OKBLUE +"You already have the latest version of RapidScan." + bcolors.ENDC)
+        print("\t"+ bcolors.OKBLUE +"You already have the latest version of IoTSuit." + bcolors.ENDC)
     else:
         clear()
-        print("\t"+ bcolors.OKGREEN +"RapidScan successfully updated to the latest version." +bcolors.ENDC)
+        print("\t"+ bcolors.OKGREEN +"IoTSuit successfully updated to the latest version." +bcolors.ENDC)
     spinner.stop()
     sys.exit(1)
 
@@ -1470,7 +1470,7 @@ elif args_namespace.target:
             output, err = p.communicate()
             val = output + err
         except:
-            print("\t"+bcolors.BG_ERR_TXT+"RapidScan was terminated abruptly..."+bcolors.ENDC)
+            print("\t"+bcolors.BG_ERR_TXT+"IoTSuit was terminated abruptly..."+bcolors.ENDC)
             sys.exit(1)
         
         # If the tool is not found or it's part of the --skip argument(s), disabling it
@@ -1491,7 +1491,7 @@ elif args_namespace.target:
         clear()
     unavail_tools_names = list(set(unavail_tools_names))
     if len(unavail_tools_names) == 0:
-        print("\t"+bcolors.OKGREEN+"All Scanning Tools are available. Complete vulnerability checks will be performed by RapidScan."+bcolors.ENDC)
+        print("\t"+bcolors.OKGREEN+"All Scanning Tools are available. Complete vulnerability checks will be performed by IoTSuit."+bcolors.ENDC)
     else:
         print("\t"+bcolors.WARNING+"Some of these tools "+bcolors.BADFAIL+str(unavail_tools_names)+bcolors.ENDC+bcolors.WARNING+" are unavailable or will be skipped. RapidScan will still perform the rest of the tests. Install these tools to fully utilize the functionality of RapidScan."+bcolors.ENDC)
     print(bcolors.BG_ENDL_TXT+"[ Checking Available Security Scanning Tools Phase... Completed. ]"+bcolors.ENDC)
@@ -1553,7 +1553,7 @@ elif args_namespace.target:
                 sys.stdout.write(ERASE_LINE)
                 #print("-" * terminal_size(), end='\r', flush=True)
                 print(bcolors.OKBLUE+"\nScan Interrupted in "+display_time(int(elapsed))+bcolors.ENDC, end='\r', flush=True)
-                print("\n"+bcolors.WARNING + "\tTest Skipped. Performing Next. Press Ctrl+Z to Quit RapidScan.\n" + bcolors.ENDC)
+                print("\n"+bcolors.WARNING + "\tTest Skipped. Performing Next. Press Ctrl+Z to Quit IoTSuit.\n" + bcolors.ENDC)
                 rs_skipped_checks = rs_skipped_checks + 1
 
         tool=tool+1
